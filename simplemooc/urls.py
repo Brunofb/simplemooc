@@ -23,6 +23,8 @@ urlpatterns = [
 
     url(r'^cursos/', include('courses.urls', namespace='courses')),
 
+    url(r'^conta/', include('accounts.urls', namespace='accounts')),
+
     url(r'^admin/', admin.site.urls),
 ]
 

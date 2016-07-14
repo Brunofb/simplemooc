@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
+    'accounts',
     'courses',
 ]
 
@@ -132,3 +133,7 @@ EMAIL_HOST_USER = 'email@gmail.com'
 EMAIL_HOST_PASSWORD = 'senha'
 EMAIL_PORT = 587
 CONTACT_EMAIL = 'barbosap3@gmail.com'
+
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'core:home'
+LOGOUT_URL = 'accounts:logout'
