@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegisterForm
+from .forms import RegisterForm, EditAccountForm
 
 
 @login_required
@@ -32,5 +32,8 @@ def register(request):
 
 @login_required
 def edit(request):
+    form = EditAccountForm
+    context = {}
+    context['form'] = form
     template_name = 'accounts/edit.html'
-    return render(request, template_name)
+    return render(request, template_name, context)
