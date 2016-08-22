@@ -76,6 +76,9 @@ class Enrollment(models.Model):
         self.status = 1
         self.save()
 
+    def is_approved(self):
+        return self.status == 1
+
     class Meta:
         verbose_name = "Enrollment"
         verbose_name_plural = "Enrollments"

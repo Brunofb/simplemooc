@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course
+from .models import Course, Enrollment
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -7,4 +7,9 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
 
+
+class EnrollmentAdmin(admin.ModelAdmin):
+    list_display = ['user', 'course']
+
 admin.site.register(Course, CourseAdmin)
+admin.site.register(Enrollment, EnrollmentAdmin)
